@@ -2,8 +2,6 @@
 # Monitor SolidFire volume performance.
 # Copyright (c) 2018 Allan McAleavy
 # Licensed under the Apache License, Version 2.0 (the "License")
-
-
 from solidfire.factory import ElementFactory
 from solidfire import common
 import logging
@@ -14,7 +12,6 @@ from termcolor import colored
 import urllib3
 urllib3.disable_warnings()
 common.setLogLevel(logging.WARN)
-
 
 # arguments
 count = 60
@@ -110,8 +107,6 @@ while 1:
 
     eqos=(iosize * curlim)
     cbw=(iosize *volstats.actual_iops)
-
-    #print("%f %f %f" % (eqos,cbw,bwqos))
 
     if cbw >0:
        if cbw >= eqos:
